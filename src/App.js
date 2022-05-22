@@ -1,7 +1,7 @@
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
 import Apod from './components/Apod.jsx';
 import Nasa from './components/Mars.jsx';
-import Simple from './components/navbar.jsx';
+import Simple from './components/Navbar.jsx';
 
 import { BrowserRouter,Route, Routes } from "react-router-dom";
 

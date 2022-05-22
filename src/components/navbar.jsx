@@ -23,7 +23,6 @@ import {
       {children}
     </Link>
   );
-  
   export default function Simple() {
     const { isOpen, onOpen, onClose } = useDisclosure();
   
