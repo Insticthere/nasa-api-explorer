@@ -1,42 +1,35 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+import Apod from './components/Apod';
+import Nasa from './components/Mars';
+import Simple from './components/navbar';
+
+import { BrowserRouter,Route, Routes } from "react-router-dom";
+
+const customeTheme = extendTheme({
+    colors: {},
+    fonts: {},
+    fontSizes: {},
+    breakpoints: {
+      sm: "320px",
+      md: "768px",
+      lg: "960px",
+      xl: "1200px",
+    },
+});
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+    <ChakraProvider theme={customeTheme}>
+        <BrowserRouter>
+        <Simple />
+            <Routes>
+                <Route path="apod" element={<Apod />} />
+                <Route path="mars" element={<Nasa />} />
+                <Route path="/" element={<Apod />} />
+            </Routes>
+        </BrowserRouter>
     </ChakraProvider>
-  );
+  )
 }
 
 export default App;
