@@ -1,11 +1,8 @@
 import React, { useState, useEffect} from "react";
 import { Box, Image, Text, Link    } from '@chakra-ui/react'
 import style from './style.module.css'
-const axios = require("axios");
+import axios from "axios";
 
-
-
-// eslint-disable-next-line
 const api_key = process.env.NASA_KEY || "DEMO_KEY";
 
 function Apod(props) { 
@@ -18,7 +15,7 @@ function Apod(props) {
   }, []);
 
   return (
-    <Box margin="auto" pt="10px" bg={"#141621"} color="white" h={"100%"} minHeight="100vh">
+    <Box margin="auto" pt="10px" bg={"#151515"} color="white" h={"100%"} minHeight="100vh">
       <Text fontSize={["1.4em", "1.6rem", "2em" , null]} textAlign="center" pb="initial">Astronautical picture of the day</Text>
       <Text fontSize={["1.2em", "1.4rem", "1.8  em" , null]} textAlign="center">{data.title}</Text>
         <Box>

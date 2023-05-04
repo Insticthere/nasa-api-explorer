@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { Box ,Input, Image, Link,Select   } from '@chakra-ui/react'
-const axios = require("axios");
+import axios from "axios";
 
 const api_key = process.env.NASA_KEY || "DEMO_KEY";
 
@@ -91,24 +91,24 @@ function App(props) {
   }, [url]);
 
   return (
-    <Box margin="auto" pt="10px" bg={"#141621"} color="white" h={"100%"} minHeight="100vh">
+    <Box margin="auto" pt="10px" bg={"#151515"} color="white" h={"100%"} minHeight="100vh">
       <Box display="flex" justifyContent="center" p="2%">
         <form style={{display: "flex"}} onSubmit={getImage}>
                       <Select id="rover" htmlFor="rover" value={rover} onChange={change} >
-                          <option value="Curiosity" selected style={{backgroundColor: '#141621'}}>Curiosity</option>
-                          <option value="Opportunity" style={{backgroundColor: '#141621'}}>Opportunity</option>
-                          <option value="Spirit" style={{backgroundColor: '#141621'}}>Spirit</option>
+                          <option value="Curiosity" selected style={{backgroundColor: '#151515'}}>Curiosity</option>
+                          <option value="Opportunity" style={{backgroundColor: '#151515'}}>Opportunity</option>
+                          <option value="Spirit" style={{backgroundColor: '#151515'}}>Spirit</option>
                       </Select>
                       <Select id="camera" htmlFor="camera" value={camera} onChange={changecam} >
-                          <option value="FHAZ" id='FHAZ' selected disabled={map[rover].FHAZ} style={{backgroundColor: '#141621'}}>FHAZ</option>
-                          <option value="RHAZ" id="RHAZ" disabled={map[rover].RHAZ} style={{backgroundColor: '#141621'}}>RHAZ</option>
-                          <option value="MAST" id="MAST" disabled={map[rover].RHAZ} style={{backgroundColor: '#141621'}}>MAST</option>
-                          <option value="CHEMCAM" id="CHEMCAM" disabled={map[rover].CHEMCAM} style={{backgroundColor: '#141621'}}>CHEMCAM</option>
-                          <option value="MAHLI" id="MAHLI" disabled={map[rover].MAHLI} style={{backgroundColor: '#141621'}}>MAHLI</option>
-                          <option value="MARDI" id="MARDI" disabled={map[rover].MARDI} style={{backgroundColor: '#141621'}}>MARDI</option>
-                          <option value="NAVCAM" id="NAVCAM" disabled={map[rover].NAVCAM} style={{backgroundColor: '#141621'}}>NAVCAM</option>
-                          <option value="PANCAM"id="PANCAM" disabled={map[rover].PANCAM} style={{backgroundColor: '#141621'}}>PANCAM</option>
-                          <option value="MINITES" id="MINITES" disabled={map[rover].MINITES} style={{backgroundColor: '#141621'}}s>MINITES</option>
+                          <option value="FHAZ" id='FHAZ' selected disabled={map[rover].FHAZ} style={{backgroundColor: '#151515'}}>FHAZ</option>
+                          <option value="RHAZ" id="RHAZ" disabled={map[rover].RHAZ} style={{backgroundColor: '#151515'}}>RHAZ</option>
+                          <option value="MAST" id="MAST" disabled={map[rover].RHAZ} style={{backgroundColor: '#151515'}}>MAST</option>
+                          <option value="CHEMCAM" id="CHEMCAM" disabled={map[rover].CHEMCAM} style={{backgroundColor: '#151515'}}>CHEMCAM</option>
+                          <option value="MAHLI" id="MAHLI" disabled={map[rover].MAHLI} style={{backgroundColor: '#151515'}}>MAHLI</option>
+                          <option value="MARDI" id="MARDI" disabled={map[rover].MARDI} style={{backgroundColor: '#151515'}}>MARDI</option>
+                          <option value="NAVCAM" id="NAVCAM" disabled={map[rover].NAVCAM} style={{backgroundColor: '#151515'}}>NAVCAM</option>
+                          <option value="PANCAM"id="PANCAM" disabled={map[rover].PANCAM} style={{backgroundColor: '#151515'}}>PANCAM</option>
+                          <option value="MINITES" id="MINITES" disabled={map[rover].MINITES} style={{backgroundColor: '#151515'}}s>MINITES</option>
                       </Select>
                       <Input borderColor="inherit" type="number" min="10" max="1000" placeholder="days (default 10)" htmlFor="days" id="days" autoComplete="off" onChange={changesol} value={sol}/>
                       <Input type="text" placeholder="API key leave for demo key" htmlFor="apikey" className="api" id="api" autoComplete="off" onChange={changekey} value={key}/>
