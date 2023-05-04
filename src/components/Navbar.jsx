@@ -30,32 +30,32 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg="#383a44;" color={'white'} px={4}>
+      <Box bg="#1e1e1e;" color={'white'} px={4} width={"100%"}>
         <Flex
           h={16}
           alignItems={'center'}
           justifyContent={'space-between'}
-          _hover={{ bg: '#383a44' }}
+          width={"100%"}
         >
           <IconButton
             size={'md'}
             icon={
               isOpen ? (
-                <CloseIcon background={'#383a44'} />
+                <CloseIcon background={'#1e1e1e'} />
               ) : (
                 <HamburgerIcon
-                  background={'#383a44'}
-                  _hover={{ bg: '#383a44' }}
+                  background={'#1e1e1e'}
+                  _hover={{ bg: '#1e1e1e' }}
                 />
               )
             }
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
-            background={'#383a44'}
-            _hover={{ bg: '#383a44' }}
+            background={'#1e1e1e'}
+            _hover={{ bg: '#1e1e1e' }}
           />
-          <Box display={'flex'} justifyContent="space-between">
+          <Box display={'flex'} justifyContent="space-between" width={'full'}>
             <Box p="10px">
               <Link href="/" textDecor={'none'} _hover={{ textDecor: 'none' }}>
                 Nasa api explorer
